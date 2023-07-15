@@ -20,5 +20,8 @@
   "homepage": "https://github.com/xiaoFeng5210/html2img#readme",
   "dependencies": {
     "esbuild": "0.18.13"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }
