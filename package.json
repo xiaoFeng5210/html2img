@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "esbuild ./src/index.ts --bundle --outfile=build.js"
+    "build": "node ./esbuild.mjs"
   },
   "repository": {
     "type": "git",
