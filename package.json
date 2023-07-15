@@ -1,0 +1,24 @@
+{
+  "name": "html2img",
+  "version": "1.0.0",
+  "description": "使用svg来实现网页中的元素截成一张图片的功能",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "esbuild ./src/index.ts --bundle --outfile=build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaoFeng5210/html2img.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xiaoFeng5210/html2img/issues"
+  },
+  "homepage": "https://github.com/xiaoFeng5210/html2img#readme",
+  "dependencies": {
+    "esbuild": "0.18.13"
+  }
+}
