@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/xiaoFeng5210/html2img#readme",
   "dependencies": {
+    "@types/node": "^20.4.2",
     "esbuild": "0.18.13"
   },
   "devDependencies": {

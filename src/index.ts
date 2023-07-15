@@ -1,6 +1,5 @@
 function html2img(name: string) {
-  const a = 1
-  return `Hello ${name}${a}`;
+  console.log('html2img')
 }
 
 export default html2img;

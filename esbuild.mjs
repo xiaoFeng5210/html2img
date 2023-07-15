@@ -6,7 +6,7 @@ const config = {
   bundle: true,
   minify: true,
   target: ['chrome58', 'firefox57', 'safari11', 'edge16'],
-  outfile: 'build.js',
+  outfile: './playground/src/build.js',
 }
 
 // const buildctx = await esbuild.context(config)

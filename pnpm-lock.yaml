@@ -1,10 +1,12 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@types/node': ^20.4.2
   cross-env: ^7.0.3
   esbuild: 0.18.13
 
 dependencies:
+  '@types/node': 20.4.2
   esbuild: 0.18.13
 
 devDependencies:
@@ -209,6 +211,10 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@types/node/20.4.2:
+    resolution: {integrity: sha512-Dd0BYtWgnWJKwO1jkmTrzofjK2QXXcai0dmtzvIBhcA+RsG5h8R3xlyta0kGOZRNfL9GuRtb1knmPEhQrePCEw==}
+    dev: false
 
   /cross-env/7.0.3:
     resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==}
