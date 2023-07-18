@@ -30,7 +30,7 @@ function html2img(dom: HTMLElement) {
       if (imgDom instanceof HTMLImageElement) {
         imgList.push(imgDom)
       } else {
-        imgList = Array.from(imgDom)  
+        imgList = Array.from(imgDom)
       }
     }
     imgList.forEach((img, index) => {
