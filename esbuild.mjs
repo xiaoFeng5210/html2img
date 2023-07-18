@@ -3,10 +3,9 @@ import * as esbuild from 'esbuild'
 const config = {
   entryPoints: ['./src/index.ts'],
   write: true,
-  bundle: true,
+  bundle: false,
   minify: true,
-  target: ['chrome58', 'firefox57', 'safari11', 'edge16'],
-  outfile: './playground/src/build.js',
+  outfile: './dist/index.js',
 }
 
 // const buildctx = await esbuild.context(config)
