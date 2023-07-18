@@ -17,11 +17,18 @@
     </style>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div class="test">
+        <p>测试截图,一大串文字</p>
+        <button>普通按钮</button>
+      </div>
+    </div>
     <!-- <script type="module" src="/src/main.ts"></script> -->
     <script type="module">
       import html2img from '../dist/index'
-      html2img()
+      document.querySelector('button').addEventListener('click', () => {
+        html2img(document.querySelector('.test'))
+      })
     </script>
   </body>
 </html>
