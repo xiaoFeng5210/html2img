@@ -30,8 +30,9 @@
     <!-- <script type="module" src="/src/main.ts"></script> -->
     <script type="module">
       import html2img from '../dist/index'
-      document.querySelector('button').addEventListener('click', () => {
-        html2img(document.querySelector('.test'))
+      document.querySelector('button').addEventListener('click', async () => {
+        const res = await html2img(document.querySelector('.test'))
+        console.log(res)
       })
     </script>
   </body>
