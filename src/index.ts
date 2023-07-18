@@ -1,5 +1,5 @@
-function html2img(name: string) {
-  console.log('112222')
+function html2img(name: HTMLElement) {
+  console.log(name)
 }
 
 export default html2img;
