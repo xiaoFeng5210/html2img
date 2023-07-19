@@ -23,7 +23,6 @@
     <div id="app">
       <div class="test">
         <p>测试截图,一大串文字</p>
-        <img src="/vite.svg" alt="">
         <button>普通按钮</button>
       </div>
     </div>
@@ -31,8 +30,19 @@
     <script type="module">
       import html2img from '../dist/index'
       document.querySelector('button').addEventListener('click', async () => {
-        const res = await html2img(document.querySelector('.test'))
-        console.log(res)
+        try {
+          const res = await html2img(document.querySelector('.test'))
+          console.log(res.src)
+          const eleLink = document.createElement('a')
+          eleLink.href = res.src
+          eleLink.download = 'zxx_png-' + (+new Date() + '').slice(1, 9) + '.png'
+          eleLink.style.display = 'none'
+          document.body.appendChild(eleLink)
+          eleLink.click()
+          document.body.removeChild(eleLink)
+        } catch (error) {
+          console.log(error)
+        }
       })
     </script>
   </body>

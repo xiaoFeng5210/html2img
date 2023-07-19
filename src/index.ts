@@ -11,7 +11,8 @@ const draw = (img: HTMLImageElement, canvas: HTMLCanvasElement, context: CanvasR
 }
 
 function createSvg(dom: HTMLElement, cloneDom: HTMLElement): string {
-  const htmlsvg = `data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="${dom.offsetWidth}" height="${dom.offsetHeight}"><foreignObject x="0" y="0" width="100%" height="100%">${new XMLSerializer().serializeToString(cloneDom)}${document.querySelector('style')?.outerHTML}</foreignObject></svg>`
+  let htmlsvg = `data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="${dom.offsetWidth}" height="${dom.offsetHeight}"><foreignObject x="0" y="0" width="100%" height="100%">${new XMLSerializer().serializeToString(cloneDom)}${document.querySelector('style')?.outerHTML}</foreignObject></svg>`;
+  htmlsvg = htmlsvg.replace(/\n/g, '').replace(/\t/g, '').replace(/#/g, '%23');
   return htmlsvg
 }
 
@@ -33,19 +34,21 @@ function html2img(dom: HTMLElement) {
         imgList = Array.from(imgDom)
       }
     }
-    imgList.forEach((img, index) => {
-      draw(img, canvas, context)
-      img.src = canvas.toDataURL('image/png')
-    })
+    if (imgList.length > 0) {
+      imgList.forEach((img, index) => {
+        draw(img, canvas, context)
+        img.src = canvas.toDataURL()
+      })
+    }
     const htmlSvg = createSvg(dom, cloneDom)
+    
     img.onload = () => {
       draw(img, canvas, context)
       resolve(img)
     }
-    img.onerror = () => {
-      reject('error')
+    img.onerror = (err) => {
+      reject(err)
     }
-    console.log(htmlSvg)
     img.src = htmlSvg
   })
 }
